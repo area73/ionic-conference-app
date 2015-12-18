@@ -9,6 +9,8 @@ export class ConferenceData {
   user: any;
   data: any;
 
+
+
   constructor(http: Http, user: UserData) {
     // inject the Http provider and set to this instance
     this.http = http;
