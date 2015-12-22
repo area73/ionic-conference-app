@@ -5,6 +5,7 @@ import {TabsPage} from './tabs/tabs';
 import {LoginPage} from './login/login';
 import {SignupPage} from './signup/signup';
 import {TutorialPage} from './tutorial/tutorial';
+import {TodoListPage} from './todo-list/todo-list';
 
 
 @App({
@@ -14,9 +15,9 @@ import {TutorialPage} from './tutorial/tutorial';
 class ConferenceApp {
 
   private _app:IonicApp;
-  // TODO: for some reason _root is not accepted
+  // TODO: for some reason _root or _pages is not accepted
   private root:TutorialPage;
-  private _pages:any[];
+  private pages:any[];
 
   constructor(app: IonicApp, confData: ConferenceData, config: Config) {
     this._app = app;
@@ -28,14 +29,15 @@ class ConferenceApp {
     // We plan to add auth to only show the login page if not logged in
     this.root = TutorialPage;
 
-    // create an list of pages that can be navigated to from the left menu
+    // create a list of pages that can be navigated to from the left menu
     // the left menu only works after login
     // the login page disables the left menu
-    this._pages = [
+    this.pages = [
       { title: 'Schedules', component: TabsPage, icon: 'calendar' },
       { title: 'Login', component: LoginPage, icon: 'log-in' },
       { title: 'Signup', component: SignupPage, icon: 'person-add' },
       { title: 'Logout', component: LoginPage, icon: 'log-out' },
+      { title: 'TODO', component: TodoListPage, icon: 'log-out' },
     ];
   }
 
